@@ -259,7 +259,7 @@ public:
 
 
     }
-    
+
     /*code for reverse printing. Uses recursive function and prints the value of temp at each step*/
     void ReversePrint(ListNode *temp)
     {
@@ -270,6 +270,55 @@ public:
         else
             return;
     }
+
+    /*This function deletes those nodes which have odd values in them, it first checks the whether the
+     * node have even or odd value, if the node have even value, the pointer points towards the next one
+     * node but if there is odd value, it deletes the node considering the position of node and update the
+     * pointers accordingly */
+    void DeleteOddValues()
+    {
+        ListNode* Loc_;
+        ListNode* PredLoc_;
+        ListNode* temp; // every node to be deleted is temporarily pointed by temp
+        Loc_=start;
+        PredLoc_=NULL;
+        temp=Loc_;
+
+         while( Loc_ != NULL)
+        {
+             if(Loc_->data%2 !=0)
+            {
+                if(Loc_->data%2 != 0 && PredLoc_==NULL ) {
+                    Loc_ = Loc_->next;
+                    start=Loc_;
+                    delete temp;
+                    temp=Loc_;
+                }
+               else if(Loc_==last)
+                {
+                    PredLoc_->next=NULL;
+                    Loc_=NULL;
+                    delete temp;
+                }
+                else {
+                    Loc_ = Loc_->next;
+                    delete temp;
+                    temp = Loc_;
+                    PredLoc_->next = Loc_;
+                }
+            }
+
+            else if(Loc_->data %2 == 0) {
+
+                PredLoc_ = Loc_;
+                Loc_ = Loc_->next;
+                temp=Loc_;
+            }
+        }
+        PrintList();
+
+    }
+
 
 };
 

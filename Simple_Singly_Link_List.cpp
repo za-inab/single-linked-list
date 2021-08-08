@@ -259,6 +259,18 @@ public:
 
 
     }
+    
+    /*code for reverse printing. Uses recursive function and prints the value of temp at each step*/
+    void ReversePrint(ListNode *temp)
+    {
+        if(temp!=NULL) {
+            ReversePrint(temp->next);
+            cout<<temp->data<<endl;
+        }
+        else
+            return;
+    }
+
 };
 
 int main()

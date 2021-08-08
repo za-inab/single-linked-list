@@ -319,6 +319,34 @@ public:
 
     }
 
+    void ReverseLinkedList()
+    {
+        ListNode* Loc_;
+        ListNode* PredLoc_;
+        ListNode* NextLoc_;
+        ListNode* temp;
+
+        temp=start;
+        Loc_=start;
+        NextLoc_=start->next;
+        PredLoc_=NULL;
+
+        while(Loc_ != NULL )
+        {
+            NextLoc_=Loc_->next;
+            Loc_->next=PredLoc_;
+            PredLoc_=Loc_;
+            Loc_=NextLoc_;
+
+        }
+
+        start=PredLoc_;
+        last=temp;
+        PrintList();
+
+    }
+
+
 
 };
 

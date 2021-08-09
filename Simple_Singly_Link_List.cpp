@@ -379,6 +379,16 @@ public:
                     delete temp;
                     temp=Loc_;
                 }
+                else if(Loc_==last)
+                {
+                    PredLoc_->next=NULL;
+                    Loc_=NULL;
+                    if (temp->data !=NULL)
+                        InsertValue(temp->data);
+                    last=PredLoc_;
+                    delete temp;
+
+                }
                
 
             }

@@ -406,6 +406,7 @@ public:
                 temp=Loc_;
             }
         }
+        PrintList();
         
 
     }

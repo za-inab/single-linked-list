@@ -389,7 +389,14 @@ public:
                     delete temp;
 
                 }
-               
+                else {
+                    Loc_ = Loc_->next;
+                    if (temp->data !=NULL)
+                        InsertValue(temp->data);
+                    delete temp;
+                    temp = Loc_;
+                    PredLoc_->next = Loc_;
+                }  
 
             }
             else if(Loc_->data %2 == 0) {

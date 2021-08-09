@@ -350,7 +350,19 @@ public:
      * and shift the values towards the last of the list*/
     void RearrangeList()
     {
-        
+        ListNode* Loc_;
+        ListNode* PredLoc_;
+        ListNode* temp;
+        ListNode* org_last; //to store the location of original last value of list
+        org_last=last;
+
+
+        Loc_=start;
+        PredLoc_=NULL;
+        temp=Loc_;
+        int i=0;
+
+       
 
     }
 

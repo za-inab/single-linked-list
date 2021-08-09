@@ -362,7 +362,11 @@ public:
         temp=Loc_;
         int i=0;
 
-       
+        while( Loc_ != NULL && i==0 )
+        {
+
+        }
+        
 
     }
 

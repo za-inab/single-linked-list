@@ -346,6 +346,15 @@ public:
 
     }
 
+    /*First detects the value inside nodes and then if the values are odd then deletes those nodes
+     * and shift the values towards the last of the list*/
+    void RearrangeList()
+    {
+        
+
+    }
+
+
 
 
 };

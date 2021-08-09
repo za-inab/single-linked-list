@@ -365,6 +365,21 @@ public:
         while( Loc_ != NULL && i==0 )
         {
 
+            /*Helps in breaking the loop otherwise the loop will run infinitely*/
+        if (Loc_==org_last)
+            i++;
+
+            if(Loc_->data%2 !=0)// logic to check if the node has odd value
+            {
+                
+
+            }
+            else if(Loc_->data %2 == 0) {
+
+                PredLoc_ = Loc_;
+                Loc_ = Loc_->next;
+                temp=Loc_;
+            }
         }
         
 

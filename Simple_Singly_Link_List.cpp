@@ -371,7 +371,15 @@ public:
 
             if(Loc_->data%2 !=0)// logic to check if the node has odd value
             {
-                
+              if(Loc_->data%2 != 0 && PredLoc_==NULL ) {
+                    Loc_ = Loc_->next;
+                    start=Loc_;
+                    if (temp->data !=NULL)
+                        InsertValue(temp->data);
+                    delete temp;
+                    temp=Loc_;
+                }
+               
 
             }
             else if(Loc_->data %2 == 0) {

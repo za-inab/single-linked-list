@@ -420,7 +420,17 @@ public:
         ListNode* temp;
 
 
+        Search(val1);
+        Loc_val1 = Loc_;
+        PredLoc_val1 = PredLoc_;
 
+        Search(val2);
+        Loc_val2 = Loc_;
+        PredLoc_val2 = PredLoc_;
+
+
+
+       
       
 
     } 

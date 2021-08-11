@@ -494,7 +494,46 @@ public:
         if (Loc_val1->next == Loc_val2 || Loc_val2->next == Loc_val1)
         {
 
-          
+            if( Loc_val1!=start && Loc_val1!=last && Loc_val2!=start && Loc_val2!= last )
+            {
+
+                if(Loc_val1->data < Loc_val2->data)
+                {
+
+                    Loc_val1->next=Loc_val2->next;
+                    Loc_val2->next=Loc_val1;
+                    PredLoc_val1->next=Loc_val2;
+
+                }
+                else if(Loc_val2->data < Loc_val1->data)
+                {
+
+                    Loc_val2->next=Loc_val1->next;
+                    Loc_val1->next=Loc_val2;
+                    PredLoc_val2->next=Loc_val1;
+
+                }
+            }
+
+            else if(Loc_val1!=start && Loc_val2!=start)
+            {
+                if(Loc_val1->next==Loc_val2)
+                {
+
+                    PredLoc_val1->next=Loc_val2;
+                    Loc_val2->next=Loc_val1;
+                    Loc_val1->next=NULL;
+                }
+                else // (Loc_val2->data < Loc_val1->data)
+                {
+
+                    PredLoc_val2->next=Loc_val1;
+                    Loc_val1->next=Loc_val2;
+                    Loc_val2->next=NULL;
+                }
+
+            }
+
 
              if( (Loc_val1==start || Loc_val2==start) && (Loc_val1->next==Loc_val2 || Loc_val2->next==Loc_val1) )
             {

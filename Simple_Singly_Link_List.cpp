@@ -428,7 +428,9 @@ public:
         Loc_val2 = Loc_;
         PredLoc_val2 = PredLoc_;
 
-
+ if (Loc_val1->next != Loc_val2 && Loc_val2->next !=Loc_val1)
+        {
+        }
 
        
       

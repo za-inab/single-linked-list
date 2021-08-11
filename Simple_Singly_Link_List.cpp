@@ -494,7 +494,32 @@ public:
         if (Loc_val1->next == Loc_val2 || Loc_val2->next == Loc_val1)
         {
 
-            
+          
+
+             if( (Loc_val1==start || Loc_val2==start) && (Loc_val1->next==Loc_val2 || Loc_val2->next==Loc_val1) )
+            {
+
+                    if (Loc_val1 == start)
+                    {
+                        Loc_val1->next = Loc_val2->next;
+                        Loc_val2->next = Loc_val1;
+                        start = Loc_val2;
+                        last = Loc_val1;
+
+
+                    }
+                    if (Loc_val2->data < Loc_val1->data) {
+
+                        Loc_val2->next = Loc_val1->next;
+                        Loc_val1->next = Loc_val2;
+                        start = Loc_val1;
+                        last = Loc_val2;
+
+                    }
+
+
+
+            }
 
         }
 

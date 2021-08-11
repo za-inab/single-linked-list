@@ -411,9 +411,10 @@ public:
 
     }
 
-/*Swap value function used to swap two values with each other*/
-   void SwapValues(int val1, int val2) {
-  ListNode* Loc_val1;
+    /*Swap value function used to swap two values with each other*/
+   void SwapValues(int val1, int val2) 
+   {
+        ListNode* Loc_val1;
         ListNode* PredLoc_val1;
         ListNode* Loc_val2;
         ListNode* PredLoc_val2;
@@ -428,17 +429,17 @@ public:
         Loc_val2 = Loc_;
         PredLoc_val2 = PredLoc_;
 
- if (Loc_val1->next != Loc_val2 && Loc_val2->next !=Loc_val1)
+        if (Loc_val1->next != Loc_val2 && Loc_val2->next !=Loc_val1)
         {
-         if (Loc_val1 != start && Loc_val2 != last && Loc_val1 != last && Loc_val2 != start)
-            {
-                temp = Loc_val2->next;
-                PredLoc_val1->next = Loc_val2;
-                PredLoc_val2->next = Loc_val1;
-                Loc_val2->next = Loc_val1->next;
-                Loc_val1->next = temp;
+            if (Loc_val1 != start && Loc_val2 != last && Loc_val1 != last && Loc_val2 != start)
+                {
+                    temp = Loc_val2->next;
+                    PredLoc_val1->next = Loc_val2;
+                    PredLoc_val2->next = Loc_val1;
+                    Loc_val2->next = Loc_val1->next;
+                    Loc_val1->next = temp;
 
-            }
+                }
             else if (Loc_val1 == start && Loc_val2 == last)
             {
                 PredLoc_val1 = NULL;
@@ -561,13 +562,7 @@ public:
             }
 
         }
-
-
-        
-
-
-       
-      
+        PrintList();
 
     } 
 

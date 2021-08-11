@@ -491,6 +491,14 @@ public:
 
         }
 
+        if (Loc_val1->next == Loc_val2 || Loc_val2->next == Loc_val1)
+        {
+
+            
+
+        }
+
+
         
 
 

@@ -430,7 +430,69 @@ public:
 
  if (Loc_val1->next != Loc_val2 && Loc_val2->next !=Loc_val1)
         {
+         if (Loc_val1 != start && Loc_val2 != last && Loc_val1 != last && Loc_val2 != start)
+            {
+                temp = Loc_val2->next;
+                PredLoc_val1->next = Loc_val2;
+                PredLoc_val2->next = Loc_val1;
+                Loc_val2->next = Loc_val1->next;
+                Loc_val1->next = temp;
+
+            }
+            else if (Loc_val1 == start && Loc_val2 == last)
+            {
+                PredLoc_val1 = NULL;
+                Loc_val2->next = Loc_val1->next;
+                PredLoc_val2->next = Loc_val1;
+                Loc_val1->next = NULL;
+
+            }
+            else if (Loc_val2 == start && Loc_val1 == last)
+            {
+                PredLoc_val2 = NULL;
+                Loc_val1->next = Loc_val2->next;
+                PredLoc_val1->next = Loc_val2;
+                Loc_val2->next = NULL;
+            }
+            else if (Loc_val1==start)
+            {
+                PredLoc_val1 = NULL;
+                PredLoc_val1 = Loc_val1->next;
+                PredLoc_val2->next = Loc_val1;
+                Loc_val1->next = Loc_val2->next;
+                Loc_val2->next = PredLoc_val1;
+                start=Loc_val2;
+            }
+            else if (Loc_val1 == last)
+            {
+
+                Loc_val1->next = Loc_val2->next;
+                PredLoc_val2->next = Loc_val1;
+                PredLoc_val1->next = Loc_val2;
+                Loc_val2->next = NULL;
+            }
+            else if (Loc_val2 == start)
+            {
+                PredLoc_val2 = NULL;
+                PredLoc_val2 = Loc_val1->next;
+                Loc_val1->next = Loc_val2->next;
+                PredLoc_val1->next = Loc_val2;
+                Loc_val2->next = PredLoc_val2;
+                start=Loc_val1;
+            }
+            else if (Loc_val2 == last)
+            {
+                PredLoc_val1->next = Loc_val2;
+                Loc_val2->next = Loc_val1->next;
+                PredLoc_val2->next = Loc_val1;
+                Loc_val1->next = NULL;
+
+            }
+
         }
+
+        
+
 
        
       

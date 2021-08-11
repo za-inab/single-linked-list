@@ -413,6 +413,13 @@ public:
 
 /*Swap value function used to swap two values with each other*/
    void SwapValues(int val1, int val2) {
+  ListNode* Loc_val1;
+        ListNode* PredLoc_val1;
+        ListNode* Loc_val2;
+        ListNode* PredLoc_val2;
+        ListNode* temp;
+
+
 
       
 
